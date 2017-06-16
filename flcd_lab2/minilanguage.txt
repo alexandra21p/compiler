@@ -1,0 +1,23 @@
+<program> ::= "hello-program" <IDENTIFIER> "var" <declList> ";" <cmpdStmt> "bye"
+<declList> ::= <declaration> // <declaration> ";" <declList>
+<declaration> ::= <IDENTIFIER> ":" <type>
+<typeOf> ::= "BOOLEAN" // "CHAR" // "INTEGER" // "STRING"
+<arrayDecl> ::= "ARRAY" "[" nr "]" "OF" typeOf
+<type> ::= <typeOf> // <arrayDecl>
+<cmpdStmt> ::= "begin" <stmtList> "end"
+<stmtList> ::= <stmt> // <stmt> ";" <stmtList>
+<stmt> ::= <simpleStmt> // <structStmt>
+<simpleStmt> ::= <assignStmt> // <inputStmt> // <outputStmt>
+<assignStmt> ::= <IDENTIFIER> ":=" <expression>
+<expression> ::= <expression> "+" <term> // <expression> "-" <term> // <term>
+<term> ::= <term> "*" <factor> // <factor> // <term> "/" <factor>
+<factor> ::= "(" <expression> ")" // <IDENTIFIER> // <CONSTANT>
+<inputStmt> ::= "read" "(" <IDENTIFIER> ")"
+<outputStmt> ::= "write" "(" <IDENTIFIER> ")" // "write" "(" <expression> ")" // "write" "(" <CONSTANT> ")"
+<structStmt> ::= <cmpdStmt> // <ifStmt> // <whileStmt> // <forStmt>
+<ifStmt> ::= "if" "(" <condition> ")" "then" <stmt> // "if" "(" <condition> ")" "then" <stmt> "else" <stmt>
+<whileStmt> ::= "while" "(" <condition> ")" "do" <stmt>
+<forStmt> ::= "for" "(" <initial> "," <condition> "," <step> ")"  "{" <stmt> "}"
+<initial> ::= <declaration> "=" <digit>
+<step> ::= <IDENTIFIER> "++" // <IDENTIFIER> "--"
+<condition> ::= <expression> <RELATION> <expression>

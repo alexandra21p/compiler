@@ -1,0 +1,10 @@
+Q = {S, A, B}
+A = {a, b}
+q = S
+F = {A}
+S,a S
+S,a A
+S,a E
+A,a B
+A,b S
+B,b S

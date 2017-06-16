@@ -1,0 +1,4 @@
+N = {S, A, B}
+T = {a, b}
+S = S
+P = {S -> aS, S -> aA, A -> bS, A -> a, B -> b, S -> a}
