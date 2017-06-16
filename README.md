@@ -1,2 +1,2 @@
 # Formal Languages & Compiler Design
-lotsa fun stuff.
+lotsa fun stuff. (java edition)
